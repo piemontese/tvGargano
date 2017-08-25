@@ -1,1 +1,70 @@
 /* You can add global styles to this file, and also import other style files */
+
+//@import '~@angular/material/core/theming/all-theme';
+@import '~@angular/material/theming';
+
+// Include the base styles for Angular Material core. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$my-app-primary: mat-palette($mat-green);//, A400);//, A200, A400);
+$my-app-accent: mat-palette($mat-amber);
+$my-app-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($my-app-theme);
+
+html, body { 
+//	margin-top: 75px;
+//  background-color: rgb(200,240,200);
+  align-content: center;
+  background-image: url(app/images/background.png);
+//  padding: 0 50px 0 50px;
+  font-family: Roboto;
+//  width: 100%;
+}
+
+.router-outlet { 
+	margin-top: 75px;
+}
+
+md-toolbar { 
+  margin-bottom: 20px;
+}
+
+.right-spacer {
+  // This fills the remaining space, by using flexbox. 
+  // Every toolbar row uses a flexbox row layout.
+  flex: 1 1 auto;
+}
+
+.container-h-center {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.container-v-center {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+.container-hv-center {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
