@@ -6,11 +6,17 @@
       <!--
       <iframe width="50%" height="350" src="https://www.youtube.com/embed/AGR_YLhsKRg" frameborder="0" allowfullscreen></iframe>
       -->
-      <iframe width="50%" 
+      <iframe *ngIf="type==='video'"
+              width="50%" 
               height="350" 
-              [src]="videoDataService.data[0]" 
+              [src]="videoDataService.data[0].src" 
               frameborder="0" 
-              allowfullscreen></iframe>
+              allowfullscreen>
+      </iframe>
+      <img *ngIf="type==='thumbnail'"
+           (click)="type='video'"
+           [src]="videoDataService.data[0].thumbnail"
+           style="cursor: pointer;"> 
     </md-grid-tile>
   </md-grid-list>
 

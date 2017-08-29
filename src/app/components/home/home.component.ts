@@ -7,6 +7,7 @@ import { VideoDataService } from "../../services/video-data.service";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  type: string = "thumbnail";
 
   constructor( private videoDataService: VideoDataService ) { }
 
