@@ -1,42 +1,22 @@
-<div fxLayout
-     fxLayout.xs="column"
-     fxLayoutAlign="center"
-     fxLayoutGap="5px"
-     fxLayoutGap.xs="0">
-  <div fxFlex="27%">
-    <md-card>
-      <md-grid-list cols="1" rowHeight="3:1">
-        <md-grid-tile>
-          <iframe width="100%" height="100" src="https://www.youtube.com/embed/AGR_YLhsKRg" frameborder="0" allowfullscreen></iframe>
-        </md-grid-tile>
-      </md-grid-list>
-    </md-card>
-  </div>
-  <div fxFlex="27%">
-    <md-card>
-      <md-grid-list cols="1" rowHeight="3:1">
-        <md-grid-tile>
-          <iframe width="100%" height="100" src="" frameborder="0"></iframe>
-        </md-grid-tile>
-      </md-grid-list>
-    </md-card>
-  </div>
-  <div fxFlex="27%">
-    <md-card>
-      <md-grid-list cols="1" rowHeight="3:1">
-        <md-grid-tile>
-          <iframe width="100%" height="100" src="" frameborder="0"></iframe>
-        </md-grid-tile>
-      </md-grid-list>
-    </md-card>
-  </div>
-  <div fxFlex="27%">
-    <md-card>
-      <md-grid-list cols="1" rowHeight="3:1">
-        <md-grid-tile>
-          <iframe width="100%" height="100" src="" frameborder="0"></iframe>
-        </md-grid-tile>
-      </md-grid-list>
-    </md-card>
+<div *ngFor="let videos of videoDataService.matrix; let i=index;">
+  <div fxLayout
+       fxLayout.xs="column"
+       fxLayoutAlign="center"
+       fxLayoutGap="5px"
+       fxLayoutGap.xs="0">
+    <div fxFlex="27%" 
+         *ngFor="let video of videos; let j=index;">
+      <md-card>
+        <md-grid-list cols="1" rowHeight="16:9">
+          <md-grid-tile>
+            <iframe width="100%" 
+                    height="150" 
+                    [src]="video" 
+                    frameborder="0" 
+                    allowfullscreen></iframe>
+          </md-grid-tile>
+        </md-grid-list>
+      </md-card>
+    </div>
   </div>
 </div>
