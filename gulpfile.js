@@ -12,7 +12,7 @@ gulp.task('clean-images', function () {
 */
 
 gulp.task('default', () =>
-    gulp.src('dist/app/images/*')
+    gulp.src('src/app/images/*')
         .pipe(imagemin([
                 imagemin.gifsicle({interlaced: true}),
                 imagemin.jpegtran({progressive: true}),
@@ -25,5 +25,5 @@ gulp.task('default', () =>
                 })], {
                     verbose: true }
                 ))
-        .pipe(gulp.dest('dist/app/images'))
+        .pipe(gulp.dest('src/app/images'))
 );

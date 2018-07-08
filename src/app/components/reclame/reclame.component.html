@@ -1,0 +1,50 @@
+<p style="text-align: center;">
+  Pubblicità
+</p>
+
+<!--<div fxLayout = "column" fxLayout.xs="column" style="z-index: 10;">-->
+  <md-grid-list fxHide.xs="true" 
+                fxHide.gt-xs="false" 
+                cols="1">
+    <md-grid-tile>
+      <a href="https://www.ferrari.com/it-IT">
+        <img src="app/images/advertisements/ferrari.png"
+             align="middle"
+             width="130px"
+             style="cursor: pointer;"> 
+      </a>
+    </md-grid-tile>
+    <md-grid-tile>
+      <a href="http://www.ducati.it/index.do">
+        <img src="app/images/advertisements/ducati.png"
+             align="middle"
+             width="130px"
+             style="cursor: pointer;"
+             (click)="viewVideo(video)"> 
+      </a>
+    </md-grid-tile>
+  </md-grid-list>
+
+  <md-grid-list fxHide.xs="false" 
+                fxHide.gt-xs="true" 
+                cols="1"
+                rowHeight="5:3">
+    <md-grid-tile>
+      <a href="https://www.ferrari.com/it-IT">
+        <img src="app/images/advertisements/ferrari.png"
+             align="middle"
+             width="130px"
+             style="cursor: pointer;"> 
+      </a>
+    </md-grid-tile>
+    <md-grid-tile>
+      <a href="http://www.ducati.it/index.do">
+        <img src="app/images/advertisements/ducati.png"
+             align="middle"
+             width="130px"
+             style="cursor: pointer;"
+             (click)="viewVideo(video)"> 
+      </a>
+    </md-grid-tile>
+  </md-grid-list>
+<!--</div>-->

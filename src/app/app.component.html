@@ -1,58 +1,44 @@
-    <div fxLayout fxLayout.xs="column">
-<div class="container-h-center " style="width: 80%">
-  <md-toolbar>
+<!--
+<div fxLayout fxLayout.xs="column" style="padding-bottom: 130px; z-index: 10;">
+  <div class="container-h-center" style="width: 80%; z-index: 10;">
+-->
 
-    <div style="height=100px; margin-top: 30px;">
-    <img width="200" src="app/images/tvgargano.png" />
-    </div>
+    <app-main-toolbar fxHide.xs="true" 
+                      fxHide.gt-xs="false" 
+                      style="z-index: 10;"></app-main-toolbar>
     
-    <md-toolbar-row>
-      <!--
-      <div class="container-h-center" style="width: 60%">
-        <button md-button [routerLink]="['/home']" routerLinkActive="router-link-active" (click)="activeRoute='home'" class="app-home-button" i18n>HOME</button>
+    <app-main-mobile-toolbar fxHide.xs="false" 
+                             fxHide.gt-xs="true" 
+                             style="z-index: 10;"></app-main-mobile-toolbar>
 
-        <button md-button [routerLink]="['/news']" routerLinkActive="router-link-active" (click)="activeRoute='news'" class="app-home-button" i18n>NEWS</button>
-        
-        <button md-button [mdMenuTriggerFor]="menu">MENU</button>
-        <md-menu #menu="mdMenu">
-          <button md-menu-item>Item 1</button>
-          <button md-menu-item>Item 2</button>
-        </md-menu>
-      </div>
-      -->
-      <div class="container-h-center" style="width: 60%"
-           fxLayout
-           fxLayout.xs="column"
-           fxLayoutAlign="center"
-           fxLayoutGap="5px"
-           fxLayoutGap.xs="0">
-        <div fxFlex="15%" fxFlex.xs="100%">
-          <button md-button [routerLink]="['/home']" routerLinkActive="router-link-active" (click)="activeRoute='home'" class="app-home-button" i18n>HOME</button>
-        </div>
-        <div fxFlex="15%">
-          <button md-button [routerLink]="['/news']" routerLinkActive="router-link-active" (click)="activeRoute='news'" class="app-home-button" i18n>NEWS</button>
-        </div>
-        <div fxFlex="15%">
-          <button md-button [routerLink]="['/video']" routerLinkActive="router-link-active" (click)="activeRoute='video'" class="app-home-button" i18n>VIDEO</button>
-        </div>
-        <div fxFlex="15%">
-          <button md-button [routerLink]="['/advertising']" routerLinkActive="router-link-active" (click)="activeRoute='advertising'" class="app-home-button" i18n>PUBBICITA'</button>
-        </div>
-        <!--
-        <div fxFlex="15%">
-          <button md-button [mdMenuTriggerFor]="menu">MENU</button>
-          <md-menu #menu="mdMenu">
-            <button md-menu-item>Item 1</button>
-            <button md-menu-item>Item 2</button>
-          </md-menu>
-        </div>
-        -->
-      </div>
-    </md-toolbar-row>
-
-  </md-toolbar>
-
-  <router-outlet></router-outlet>
+<!--
+  </div>
 </div>
+-->
+
+<!--
+<div fxLayout fxLayout.xs="column" style="z-index: 1;">
+  <div class="container-h-center " style="width: 80%;">
+    <router-outlet></router-outlet >
+  </div>
+</div>
+-->
+
+<div fxLayout="column" fxLayout.xs="column" style="z-index: 1;">
+  <div fxFlex="100%">
+    <div [ngClass]="['container-h-center', 'desktop-container', 'mobile-container']"
+         [ngClass.gt-xs]="{'container-h-center': true, 'desktop-container': true}"
+         [ngClass.xs]="{'container-h-center': true, 'mobile-container': true}">
+      <router-outlet></router-outlet >
     </div>
+  </div>
+  <div class="container-h-center" fxFlex="100%">
+    <app-footer></app-footer>
+  </div>
+</div>
+
+
+
+
+
 

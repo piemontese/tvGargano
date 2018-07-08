@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VideoDataService } from "../../services/video-data.service";
+import { VideoDataService } from '../../services/video-data.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +7,7 @@ import { VideoDataService } from "../../services/video-data.service";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  type: string = "thumbnail";
+  type = 'thumbnail';
 
   constructor( private videoDataService: VideoDataService ) { }
 

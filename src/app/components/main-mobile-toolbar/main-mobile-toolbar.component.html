@@ -1,0 +1,80 @@
+<div fxLayout fxLayout.xs="column" style="padding-bottom: 130px; z-index: 10;">
+  <div class="container-h-center" style="width: 100%; z-index: 10;">
+
+  <md-toolbar color="primary" class="fixed-topxxx mat-elevation-z20">
+
+    <div class="container-h-center" style="height=100px; margin-top: 10px;">
+    <img width="175" src="app/images/tvgargano.png" />
+    </div>
+    
+    <md-toolbar-row style="height: 20px">
+      
+    </md-toolbar-row>
+    <md-toolbar-row style="height: 30px">
+      <div class="container-h-center">
+        <button md-icon-button mdTooltip="{{menuTooltip}}" (click)="menuClick()"><md-icon i18n>reorder</md-icon></button>
+      </div>
+    </md-toolbar-row>
+
+<!--
+    <md-toolbar-row *ngIf="viewMenu"
+                     style="height: 30px;">
+      <div class="container-h-center">
+        <hr align=”center” size=”1″ width=”100%″ color=”black” noshade>
+      </div>
+    </md-toolbar-row>
+-->
+
+    <md-toolbar-row *ngIf="viewMenu"
+                     style="height: 30px;">
+      <div class="container-h-center">
+        <button md-button 
+                [routerLink]="['/home']" 
+                routerLinkActive="router-link-active" 
+                (click)="viewMenu=!viewMenu; activeRoute='home'" 
+                class="menu-button" i18n>HOME</button>
+      </div>
+    </md-toolbar-row>
+    <md-toolbar-row *ngIf="viewMenu"
+                     style="height: 30px;">
+      <div class="container-h-center">
+        <button md-button 
+                [routerLink]="['/news']" 
+                routerLinkActive="router-link-active" 
+                (click)="viewMenu=!viewMenu; activeRoute='news'" 
+                class="menu-button" i18n>NEWS</button>
+      </div>
+    </md-toolbar-row>
+    <md-toolbar-row *ngIf="viewMenu"
+                     style="height: 30px;">
+      <div class="container-h-center">
+        <button md-button 
+                [routerLink]="['/video']" 
+                routerLinkActive="router-link-active" 
+                (click)="viewMenu=!viewMenu; activeRoute='video'" 
+                class="menu-button" i18n>VIDEO</button>
+      </div>
+    </md-toolbar-row>
+    <md-toolbar-row *ngIf="viewMenu"
+                     style="height: 30px">
+      <div class="container-h-center">
+        <button md-button 
+                [routerLink]="['/advertising']" 
+                routerLinkActive="router-link-active" 
+                (click)="viewMenu=!viewMenu; activeRoute='advertising'" 
+                class="menu-button" i18n>PUBBLICITA'</button>
+      </div>
+    </md-toolbar-row>
+
+  </md-toolbar>
+
+
+  </div>
+</div>
+
+<!--
+        <button md-button [routerLink]="['/home']" routerLinkActive="router-link-active" (click)="activeRoute='home'" class="app-home-button" style="width: 25%;" i18n>HOME</button>
+        <button md-button [routerLink]="['/news']" routerLinkActive="router-link-active" (click)="activeRoute='news'" class="app-home-button" style="width: 25%;" i18n>NEWS</button>
+        <button md-button [routerLink]="['/video']" routerLinkActive="router-link-active" (click)="activeRoute='video'" class="app-home-button" style="width: 25%;" i18n>VIDEO</button>
+        <button md-button [routerLink]="['/advertising']" routerLinkActive="router-link-active" (click)="activeRoute='advertising'" class="app-home-button" style="width: 25%;" i18n>PUBBICITA'</button>
+-->
